@@ -1,4 +1,4 @@
-[
+export const invoicesData = [
   {
     "id": "INV-001",
     "customer": "Acme Corporation",

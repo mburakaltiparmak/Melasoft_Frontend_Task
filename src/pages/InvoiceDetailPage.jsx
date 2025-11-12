@@ -4,8 +4,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { Card, Descriptions, Button, Spin } from 'antd';
 import { ArrowLeftOutlined } from '@ant-design/icons';
-import { setSelectedInvoice } from '../store/invoiceSlice';
 import LanguageSwitcher from '../components/LanguageSwitcher';
+import { setSelectedInvoice } from '../store/actions/invoiceActions';
 
 const InvoiceDetailPage = () => {
   const { id } = useParams();

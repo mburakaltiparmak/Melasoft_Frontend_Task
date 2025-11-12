@@ -1,5 +1,7 @@
+import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Button } from 'antd';
+import { Button, Dropdown, Menu, Tooltip } from 'antd';
+import { GlobalOutlined, DownOutlined } from '@ant-design/icons';
 
 const LanguageSwitcher = () => {
   const { i18n } = useTranslation();
@@ -8,23 +10,30 @@ const LanguageSwitcher = () => {
     i18n.changeLanguage(lng);
   };
 
+  const menu = (
+    <Menu
+      onClick={({ key }) => changeLanguage(key)}
+      items={[
+        {
+          key: 'en',
+          label: 'English',
+        },
+        {
+          key: 'tr',
+          label: 'Türkçe',
+        },
+      ]}
+    />
+  );
+
   return (
-    <div className="flex gap-2">
-      <Button
-        type={i18n.language === 'en' ? 'primary' : 'default'}
-        onClick={() => changeLanguage('en')}
-        className="font-medium"
-      >
-        EN
-      </Button>
-      <Button
-        type={i18n.language === 'tr' ? 'primary' : 'default'}
-        onClick={() => changeLanguage('tr')}
-        className="font-medium"
-      >
-        TR
-      </Button>
-    </div>
+    <Tooltip title="Change Language">
+      <Dropdown overlay={menu} trigger={['click']} placement="bottomRight">
+        <Button>
+          <GlobalOutlined /> {i18n.language.toUpperCase()} <DownOutlined />
+        </Button>
+      </Dropdown>
+    </Tooltip>
   );
 };
 

@@ -3,9 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Table, Button, Spin } from 'antd';
-import { fetchInvoices } from '../store/invoiceSlice';
-import { logout } from '../store/authSlice';
-import LanguageSwitcher from '../components/LanguageSwitcher';
+import { fetchInvoices } from '../store/actions/invoiceActions';
 
 const InvoiceListPage = () => {
   const dispatch = useDispatch();
@@ -18,10 +16,6 @@ const InvoiceListPage = () => {
     dispatch(fetchInvoices());
   }, [dispatch]);
 
-  const handleLogout = () => {
-    dispatch(logout());
-    navigate('/login');
-  };
 
   const columns = [
     {
@@ -92,12 +86,7 @@ const InvoiceListPage = () => {
               Welcome, {user?.name}
             </p>
           </div>
-          <div className="flex gap-4 items-center">
-            <LanguageSwitcher />
-            <Button danger onClick={handleLogout}>
-              {t('common.logout')}
-            </Button>
-          </div>
+          
         </div>
       </div>
 

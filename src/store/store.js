@@ -1,10 +1,13 @@
+import authReducer from './reducers/authReducer';
+import invoiceReducer from './reducers/invoiceReducer';
 import { configureStore } from '@reduxjs/toolkit';
-import authReducer from './authSlice';
-import invoiceReducer from './invoiceSlice';
+import logger from 'redux-logger';
+
 
 export const store = configureStore({
-  reducer: {
+  reducer : {
     auth: authReducer,
     invoices: invoiceReducer
-  }
-});
+  },
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger)  
+  });
