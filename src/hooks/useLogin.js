@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { message } from 'antd';
 import { login } from '../store/actions/authActions';
-import { userData } from '../mocks/user';
+import { authService } from '../api/authService';
 
 export const useLogin = () => {
   const dispatch = useDispatch();
@@ -12,26 +12,14 @@ export const useLogin = () => {
     const { email, password } = values;
 
     try {
-      console.log("login attempt with:", email, password);
-      // const response = await fetch('https://api-dev.docnova.ai/auth/login/dev', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify({ email, password })
-      // });
-      // const data = await response.json();
-
-      // Şimdilik mock data kullanıyoruz
-      if (email === 'devmelauser@yopmail.com' && password === 'Work123???') {
-        dispatch(login(userData));
-        message.success('Login successful!');
-        navigate('/invoices');
-        return { success: true };
-      } else {
-        message.error('Invalid email or password');
-        return { success: false, error: 'Invalid credentials' };
-      }
+      const data = await authService.login(email, password);
+      
+      dispatch(login(data, data.jwt));
+      message.success('Login successful!');
+      navigate('/invoices');
+      return { success: true };
     } catch (error) {
-      message.error('Login failed. Please try again.');
+      message.error('Invalid email or password');
       return { success: false, error: error.message };
     }
   };
