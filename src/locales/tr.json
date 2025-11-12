@@ -1,0 +1,33 @@
+{
+  "login": {
+    "title": "Giriş",
+    "email": "E-posta",
+    "password": "Şifre",
+    "submit": "Giriş Yap",
+    "invalidCredentials": "Geçersiz e-posta veya şifre"
+  },
+  "invoices": {
+    "title": "Fatura Listesi",
+    "id": "ID",
+    "customer": "Müşteri",
+    "amount": "Tutar",
+    "date": "Tarih",
+    "status": "Durum",
+    "actions": "İşlemler",
+    "viewDetails": "Detaylar"
+  },
+  "invoiceDetail": {
+    "title": "Fatura Detayları",
+    "backToList": "Listeye Dön",
+    "invoiceNumber": "Fatura Numarası",
+    "customer": "Müşteri",
+    "amount": "Tutar",
+    "date": "Tarih",
+    "status": "Durum",
+    "description": "Açıklama"
+  },
+  "common": {
+    "logout": "Çıkış",
+    "language": "Dil"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "login": {
+    "title": "Login",
+    "email": "Email",
+    "password": "Password",
+    "submit": "Sign In",
+    "invalidCredentials": "Invalid email or password"
+  },
+  "invoices": {
+    "title": "Invoice List",
+    "id": "ID",
+    "customer": "Customer",
+    "amount": "Amount",
+    "date": "Date",
+    "status": "Status",
+    "actions": "Actions",
+    "viewDetails": "Details"
+  },
+  "invoiceDetail": {
+    "title": "Invoice Details",
+    "backToList": "Back to List",
+    "invoiceNumber": "Invoice Number",
+    "customer": "Customer",
+    "amount": "Amount",
+    "date": "Date",
+    "status": "Status",
+    "description": "Description"
+  },
+  "common": {
+    "logout": "Logout",
+    "language": "Language"
+  }
+}
