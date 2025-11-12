@@ -24,7 +24,7 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+    <div className="min-h-screen flex items-center justify-center bg-red-500">
       <div className="absolute top-4 right-4">
         <LanguageSwitcher />
       </div>
